@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		544D78C82461B79A007DB763 /* MapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D78C72461B79A007DB763 /* MapViewCoordinator.swift */; };
 		544D78CA2461BE33007DB763 /* RoutesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D78C92461BE33007DB763 /* RoutesViewModel.swift */; };
 		544D78CF2461C080007DB763 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D78CE2461C080007DB763 /* Stop.swift */; };
+		54D146452463429F008AB668 /* Polyline in Frameworks */ = {isa = PBXBuildFile; productRef = 54D146442463429F008AB668 /* Polyline */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D146452463429F008AB668 /* Polyline in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +134,9 @@
 			dependencies = (
 			);
 			name = MapkitPolyline;
+			packageProductDependencies = (
+				54D146442463429F008AB668 /* Polyline */,
+			);
 			productName = MapkitPolyline;
 			productReference = 544D78AE2461ACE9007DB763 /* MapkitPolyline.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 544D78A52461ACE9007DB763;
+			packageReferences = (
+				54D146432463429F008AB668 /* XCRemoteSwiftPackageReference "Polyline" */,
+			);
 			productRefGroup = 544D78AF2461ACE9007DB763 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -386,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54D146432463429F008AB668 /* XCRemoteSwiftPackageReference "Polyline" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:raphaelmor/Polyline.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54D146442463429F008AB668 /* Polyline */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54D146432463429F008AB668 /* XCRemoteSwiftPackageReference "Polyline" */;
+			productName = Polyline;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 544D78A62461ACE9007DB763 /* Project object */;
 }

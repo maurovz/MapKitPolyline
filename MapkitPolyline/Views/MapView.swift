@@ -25,9 +25,8 @@ struct MapView: UIViewRepresentable {
   }
   
   func updateAnnotations(from mapView: MKMapView) {
-    let annotations = routeViewModel.makeStopAnnotations()
     mapView.removeOverlays(mapView.overlays)
-    let polyline = MKPolyline(coordinates: annotations, count: annotations.count)
+    let polyline = MKPolyline(coordinates: routeViewModel.routeLocations, count: routeViewModel.routeLocations.count)
     mapView.addOverlay(polyline)
     setMapZoomArea(map: mapView, polyline: polyline, edgeInsets: mapZoomEdgeInsets, animated: true)
   }
