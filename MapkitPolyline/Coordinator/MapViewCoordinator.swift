@@ -1,9 +1,7 @@
-import Foundation
 import MapKit
 
 final class MapViewCoordinator: NSObject, MKMapViewDelegate {
   private let map: MapView
-  private let routesViewModel = RouteViewModel()
   
   init(_ control: MapView) {
     self.map = control

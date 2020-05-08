@@ -2,11 +2,11 @@ import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
-  private let routeViewModel = RouteViewModel()
+  private let locationViewModel = LocationViewModel()
   private let mapZoomEdgeInsets = UIEdgeInsets(top: 30.0, left: 30.0, bottom: 30.0, right: 30.0)
   
   init() {
-    routeViewModel.load()
+    locationViewModel.load()
   }
   
   func makeCoordinator() -> MapViewCoordinator {
@@ -21,12 +21,12 @@ struct MapView: UIViewRepresentable {
   }
   
   func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
-    updateAnnotations(from: uiView)
+    updateOverlays(from: uiView)
   }
   
-  func updateAnnotations(from mapView: MKMapView) {
+  private func updateOverlays(from mapView: MKMapView) {
     mapView.removeOverlays(mapView.overlays)
-    let polyline = MKPolyline(coordinates: routeViewModel.routeLocations, count: routeViewModel.routeLocations.count)
+    let polyline = MKPolyline(coordinates: locationViewModel.locations, count: locationViewModel.locations.count)
     mapView.addOverlay(polyline)
     setMapZoomArea(map: mapView, polyline: polyline, edgeInsets: mapZoomEdgeInsets, animated: true)
   }
